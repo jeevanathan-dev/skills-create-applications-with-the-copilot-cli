@@ -42,4 +42,23 @@ function divide(a, b) {
   return x / y;
 }
 
-module.exports = { add, subtract, multiply, divide };
+function modulo(a, b) {
+  const x = toNumber(a);
+  const y = toNumber(b);
+  if (y === 0) throw new Error('Division by zero');
+  return x % y;
+}
+
+function power(base, exponent) {
+  const b = toNumber(base);
+  const e = toNumber(exponent);
+  return Math.pow(b, e);
+}
+
+function squareRoot(n) {
+  const x = toNumber(n);
+  if (x < 0) throw new Error('Square root of negative number');
+  return Math.sqrt(x);
+}
+
+module.exports = { add, subtract, multiply, divide, modulo, power, squareRoot };
